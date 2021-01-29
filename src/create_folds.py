@@ -5,10 +5,10 @@ from iterstrat.ml_stratifiers import MultilabelStratifiedKFold
 INPUT_DIR = os.environ.get('INPUT_DIR')
 FOLD_DIR = os.environ.get('FOLD_DIR')
 
-RANDOM_STATE = os.environ.get('RANDOM_STATE')
+RANDOM_STATE = int(os.environ.get('RANDOM_STATE'))
 
 FOLD_NAME = os.environ.get('FOLD_NAME')
-FOLD_NUM = os.environ.get('FOLD_NUM')
+FOLD_NUM = int(os.environ.get('FOLD_NUM'))
 
 if __name__ == "__main__":
 

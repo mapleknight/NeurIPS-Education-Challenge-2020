@@ -34,7 +34,7 @@ INPUT_DIR = os.environ.get('INPUT_DIR')
 FEATURE_DIR = os.environ.get('FEATURE_DIR')
 
 VARLEN_LOWFREQ_TH = 0
-RANDOM_STATE = os.environ.get('RANDOM_STATE')
+RANDOM_STATE = int(os.environ.get('RANDOM_STATE'))
 
 subject_id_list = [
     3,
