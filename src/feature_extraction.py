@@ -903,8 +903,10 @@ if __name__ == "__main__":
         df_test = extract_age(df_test)
 
     with t.timer(f'subject preprocess'):
-        df = df.drop(columns=['DateOfBirth', 'DateAnswered', 'DateOfBirth_dt', 'DateAnswered_dt'])
-        df_test = df_test.drop(columns=['DateOfBirth', 'DateAnswered', 'DateOfBirth_dt', 'DateAnswered_dt'])
+        #df = df.drop(columns=['DateOfBirth', 'DateAnswered', 'DateOfBirth_dt', 'DateAnswered_dt'])
+        #df_test = df_test.drop(columns=['DateOfBirth', 'DateAnswered', 'DateOfBirth_dt', 'DateAnswered_dt'])
+        df = df.drop(columns=['DateOfBirth', 'DateAnswered', 'DateOfBirth_dt'])
+        df_test = df_test.drop(columns=['DateOfBirth', 'DateAnswered', 'DateOfBirth_dt'])
         df = reduce_mem_usage(df)
         df_test = reduce_mem_usage(df_test)
 
