@@ -47,13 +47,15 @@ def reduce_mem_usage(df):
                         df[col] = df[col].astype(np.int32)
                     elif c_min > np.iinfo(np.int64).min and c_max < np.iinfo(np.int64).max:
                         df[col] = df[col].astype(np.int32)
-                else:
+                elif str(col_type)[:3] == 'float':
                     if c_min > np.finfo(np.float16).min and c_max < np.finfo(np.float16).max:
                         df[col] = df[col].astype(np.float32)
                     elif c_min > np.finfo(np.float32).min and c_max < np.finfo(np.float32).max:
                         df[col] = df[col].astype(np.float32)
                     else:
                         df[col] = df[col].astype(np.float32)
+                else:
+                    continue
         except ValueError:
             continue
 
